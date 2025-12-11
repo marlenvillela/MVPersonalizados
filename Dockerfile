@@ -6,10 +6,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-COPY composer.json composer.lock* /var/www/html/
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader || true
-
 COPY . /var/www/html
+
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 

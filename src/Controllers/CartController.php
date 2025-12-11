@@ -20,7 +20,7 @@ class CartController extends Controller {
             exit();
         }
 
-        // Obtener producto desde BD
+      
         $productDao = new Products();
         $product = $productDao->find($id);
 
@@ -29,12 +29,12 @@ class CartController extends Controller {
             exit();
         }
 
-        // Inicializar carrito si no existe
+       
         if (!isset($_SESSION["cart"])) {
             $_SESSION["cart"] = [];
         }
 
-        // Si es producto nuevo → guardarlo con imagen incluida
+        
         if (!isset($_SESSION["cart"][$id])) {
             $_SESSION["cart"][$id] = [
                 "productId" => $product["productId"],

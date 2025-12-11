@@ -8,7 +8,6 @@ class SecurityController extends Controller
 {
     public function login()
     {
-        // Router ya inicia la sesión
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $username = $_POST["username"] ?? "";
@@ -31,7 +30,6 @@ class SecurityController extends Controller
                 return;
             }
 
-            // Guardar sesión del usuario
             $_SESSION["user"] = [
                 "id"       => $user["userId"],
                 "username" => $user["userName"],
@@ -42,13 +40,12 @@ class SecurityController extends Controller
             exit;
         }
 
-        // Mostrar vista del login
         $this->render("security/login");
     }
 
     public function logout()
     {
-        // Router ya inició sesión, no repetir session_start
+
 
         session_destroy();
         header("Location: /?page=security/login");
@@ -57,7 +54,7 @@ class SecurityController extends Controller
 
     public function register()
     {
-        // Router ya maneja sesión
+
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $username = $_POST["username"] ?? "";

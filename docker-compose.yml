@@ -5,6 +5,7 @@ services:
     container_name: mv_app
     volumes:
       - ./:/var/www/html
+      - /var/www/html/vendor
     depends_on:
       - db
     env_file:

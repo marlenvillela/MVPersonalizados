@@ -12,7 +12,6 @@ class ProductsController extends Controller {
     }
 
     public function view() {
-        // expects ?id=#
         $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
         $dao = new Products();
         $all = $dao->all();
