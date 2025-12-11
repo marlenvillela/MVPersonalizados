@@ -2,7 +2,7 @@
 namespace App\Dao;
 
 class Products extends Table {
-
+    // Obtener todos los productos
     public function all() {
         try {
 
@@ -13,7 +13,7 @@ class Products extends Table {
             return [];
         }
     }
-
+    // Obtener un producto por su ID
     public function find($id) {
  
         $stmt = $this->pdo->prepare("SELECT * FROM products WHERE productId = :id LIMIT 1");
