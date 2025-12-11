@@ -10,7 +10,12 @@ class Router {
 
         $publicRoutes = [
             "security/login",
-            "security/register"
+            "security/register",
+            // Allow anonymous access to home and products
+            "home/index",
+            "products",
+            "products/index",
+            "products/view"
         ];
 
 
