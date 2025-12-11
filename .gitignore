@@ -1,0 +1,4 @@
+vendor/
+dbdata/
+*.zip
+.env
