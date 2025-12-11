@@ -36,7 +36,6 @@ VALUES
 ('Llavero Grabado','Acero inoxidable con grabado',45,'/imgs/llavero-grabado.png',20),
 ('Marco de Fotos 3D','Marco moderno con efecto 3D',120,'/imgs/marco-fotos-3d.png',12);
 
--- Nuevos productos añadidos: 9 items adicionales
 INSERT INTO products (productName, productDescription, productPrice, productImgUrl, inventoryQty)
 VALUES
 ('Retratera con Cajita','Set especial con retratera y caja decorativa',260,'/imgs/retratera con cajita.PNG',7),
