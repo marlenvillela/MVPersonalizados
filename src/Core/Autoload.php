@@ -7,11 +7,11 @@ class Autoload {
             // Prefijo que deben tener las clases para que este autoload las cargue
             $prefix = 'App\\';
             $base_dir = __DIR__ . '/../';
-            // Si la clase no empieza con "App\" simplemente no la cargamos
+            
             if (strncmp($prefix, $class, strlen($prefix)) !== 0) {
                 return;
             }
-            // Quitamos el prefijo "App\" para obtener la ruta relativa
+           
             $relative = substr($class, strlen($prefix));
             $file = $base_dir . str_replace('\\', '/', $relative) . '.php';
               // Si el archivo existe entonces lo requerimos
