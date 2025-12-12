@@ -14,7 +14,7 @@ class PaymentsController extends Controller {
         $this->secret = $_ENV["PAYPAL_SECRET"];
         $this->mode = $_ENV["PAYPAL_MODE"] ?? "sandbox";
     }
-
+    // Integracion de fernando, revisar checkout 
     private function getAccessToken() {
 
         $url = $this->mode === "live" 
