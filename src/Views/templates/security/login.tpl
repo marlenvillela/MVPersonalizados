@@ -1,5 +1,5 @@
 <h1>Iniciar Sesión</h1>
-
+//Juan revisa esto, porfa
 <?php if (!empty($error)): ?>
 <p style="color:red;"><?php echo $error; ?></p>
 <?php endif; ?>
