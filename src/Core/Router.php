@@ -18,7 +18,7 @@ class Router {
             "products/view"
         ];
 
-        // Si no mandan nada en "page" cargamos por defecto home/index
+        
         $page = $_GET['page'] ?? 'home/index';
 
         // Guardamos el metodo de la peticion 
@@ -27,7 +27,7 @@ class Router {
 
         if (!in_array($page, $publicRoutes)) {
             if (!isset($_SESSION['user'])) {
-             //las rutas de pagos si pueden avanzar sin login
+            
                 if (!str_starts_with($page, "payments/")) {
                     header("Location: /?page=security/login");
                     exit();
@@ -48,7 +48,7 @@ class Router {
             echo "Controller not found: $controllerName";
             return;
         }
-        // Instanciamos el controlador
+       
         $controller = new $controllerClass();
         // Verificamos si el metodo de accion existe dentro del controlador
         if (!method_exists($controller, $action)) {
