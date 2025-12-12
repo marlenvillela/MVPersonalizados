@@ -4,7 +4,7 @@ namespace App\Core;
 class Router {
 
     public function run() {
-        // Iniciamos la sesion para poder manejar usuarios logueados
+       
         session_start();
 
        // Rutas que no necesitan autenticacion cualquiera puede entrar
