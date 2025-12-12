@@ -1,5 +1,5 @@
 <h1>Crear Cuenta</h1>
-
+// alerta de regiter
 <?php if (!empty($error)): ?>
 <p style="color:red;"><?php echo $error; ?></p>
 <?php endif; ?>
