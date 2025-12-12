@@ -7,7 +7,7 @@ class Router {
        
         session_start();
 
-       // Rutas que no necesitan autenticacion cualquiera puede entrar
+       
         $publicRoutes = [
             "security/login",
             "security/register",
@@ -42,7 +42,7 @@ class Router {
         // Armamos el namespace completo del controlador
         $controllerClass = '\\App\\Controllers\\' . $controllerName;
 
-        // Si el controlador no existe devolvemos error 404
+       
         if (!class_exists($controllerClass)) {
             http_response_code(404);
             echo "Controller not found: $controllerName";
@@ -50,7 +50,7 @@ class Router {
         }
        
         $controller = new $controllerClass();
-        // Verificamos si el metodo de accion existe dentro del controlador
+       
         if (!method_exists($controller, $action)) {
             http_response_code(404);
             echo "Action not found: $action";
