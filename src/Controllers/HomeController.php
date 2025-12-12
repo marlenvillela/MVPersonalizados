@@ -5,11 +5,8 @@ use App\Core\Controller;
 use App\Dao\Products;
 
 class HomeController extends Controller {
-
-    public function index() {
-
-        
-       
+    //Mostrar la página de inicio
+    public function index() {       
         $productsDao = new Products();
         $products = $productsDao->all();
 
