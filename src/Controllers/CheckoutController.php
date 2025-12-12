@@ -2,7 +2,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-
+// Hecho arreglo listo
 class CheckoutController extends Controller {
 
     public function index() {
