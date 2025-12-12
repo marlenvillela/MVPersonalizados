@@ -8,7 +8,7 @@ class PaymentsController extends Controller {
     private $clientId;
     private $secret;
     private $mode;
-
+    
     public function __construct() {
         $this->clientId = $_ENV["PAYPAL_CLIENT_ID"];
         $this->secret = $_ENV["PAYPAL_SECRET"];
@@ -30,7 +30,7 @@ class PaymentsController extends Controller {
 
         return $response->access_token ?? null;
     }
-
+    // Crear orden de pago
     public function createOrder() {
 
         $accessToken = $this->getAccessToken();
@@ -59,7 +59,7 @@ class PaymentsController extends Controller {
 
         echo json_encode($response);
     }
-
+    // Capturar orden de pago
     public function captureOrder() {
 
         $accessToken = $this->getAccessToken();
@@ -79,7 +79,7 @@ class PaymentsController extends Controller {
 
         echo json_encode($response);
     }
-
+    // Función auxiliar para hacer solicitudes cURL
     private function curl($url, $body = null, $headers = []) {
 
         $ch = curl_init($url);

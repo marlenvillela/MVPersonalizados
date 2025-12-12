@@ -5,12 +5,12 @@ use App\Core\Controller;
 use App\Dao\Products;
 
 class CartController extends Controller {
-
+    //Mostrar el carrito
     public function index() {
         $cart = $_SESSION["cart"] ?? [];
         $this->render("cart", ["cart" => $cart]);
     }
-
+    //Agregar producto al carrito
     public function add() {
 
         $id = isset($_GET["id"]) ? intval($_GET["id"]) : 0;
@@ -20,7 +20,7 @@ class CartController extends Controller {
             exit();
         }
 
-      
+      //Buscar el producto en la base de datos
         $productDao = new Products();
         $product = $productDao->find($id);
 
@@ -50,7 +50,7 @@ class CartController extends Controller {
         header("Location: /?page=cart/index");
         exit();
     }
-
+    //Eliminar producto del carrito
     public function remove() {
 
         $id = isset($_GET["id"]) ? intval($_GET["id"]) : 0;

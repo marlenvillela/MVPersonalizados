@@ -6,6 +6,7 @@ use App\Dao\Users;
 
 class SecurityController extends Controller
 {
+    //Mostrar el formulario de login y procesar el login
     public function login()
     {
 
@@ -29,7 +30,7 @@ class SecurityController extends Controller
                 ]);
                 return;
             }
-
+            //Guardar información del usuario en la sesión
             $_SESSION["user"] = [
                 "id"       => $user["userId"],
                 "username" => $user["userName"],
@@ -42,7 +43,7 @@ class SecurityController extends Controller
 
         $this->render("security/login");
     }
-
+    //Cerrar sesión del usuario
     public function logout()
     {
 
@@ -51,7 +52,7 @@ class SecurityController extends Controller
         header("Location: /?page=security/login");
         exit();
     }
-
+    //Mostrar el formulario de registro y procesar el registro
     public function register()
     {
 
